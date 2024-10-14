@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="img">
@@ -34,5 +35,48 @@
                 <p>Instagram: <a href="https://www.instagram.com/imrapii/?hl=en">@imrapii</a></p>
             </div>
         </div>
+        <div class="controls">
+            <label for="bgColor">Background Color: </label>
+            <select id="bgColor">
+              <option value="white">Default</option>
+              <option value="lightblue">Light Blue</option>
+              <option value="lightgreen">Light Green</option>
+              <option value="lightpink">Light Pink</option>
+            </select>
+        
+            <label for="fontSize">Font Size: </label>
+            <input type="range" id="fontSize" min="12" max="48" value="16">
+
+            <button id="darkModeToggle">Toggle Dark Mode</button>
+        
+            <label for="fontStyle">Font Style: </label>
+            <select id="fontStyle">
+              <option value="Righteous">Righteous (Defalut)</option>
+              <option value="Georgia, serif">Serif (Georgia)</option>
+              <option value="Courier New, monospace">Monospace (Courier New)</option>
+            </select>
+          </div>
+
+          <script>
+            // Background Color Change
+            document.getElementById('bgColor').addEventListener('change', function() {
+              document.body.style.backgroundColor = this.value;
+            });
+        
+            // Font Size Change
+            document.getElementById('fontSize').addEventListener('input', function() {
+              document.body.style.fontSize = this.value + 'px';
+            });
+        
+            // Dark Mode Toggle
+            document.getElementById('darkModeToggle').addEventListener('click', function() {
+              document.body.classList.toggle('dark-mode');
+            });
+        
+            // Font Style Change
+            document.getElementById('fontStyle').addEventListener('change', function() {
+              document.body.style.fontFamily = this.value;
+            });
+          </script>
 </body>
 </html>
